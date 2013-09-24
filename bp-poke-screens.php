@@ -47,14 +47,16 @@ class BP_Poke_Screens  {
             $pokes    =  bp_get_user_meta( $poked_id,'pokes',true );
             $url      =  bp_core_get_user_domain( $poked_id );
             if( $pokes ):
-               foreach( $pokes as $poke ):?>
-                 <li class="poke-item"> <?php printf( '<strong>%s</strong> poked you', bp_core_get_user_displayname( $poke['poked_by'] ) );?>
-                     <a class="poke-back"  title="<?php _e('Poke back', 'bp-poke' );?>" href="<?php echo bp_poke_get_poke_back_url( $poke['poked_by'] ) ;?>"> <?php _e('Poke Back', 'bp-poke');?></a>
-                  </li>
+                echo '<ul class="poke-list">';
+                foreach( $pokes as $poke ):?>
+                  <li class="poke-item"> <?php printf( '<strong>%s</strong> poked you', bp_core_get_user_displayname( $poke['poked_by'] ) );?>
+                      <a class="poke-back"  title="<?php _e('Poke back', 'bp-poke' );?>" href="<?php echo bp_poke_get_poke_back_url( $poke['poked_by'] ) ;?>"> <?php _e('Poke Back', 'bp-poke');?></a>
+                   </li>
+                   
                 <?php endforeach;?>
-              
+                <?php echo '</ul>';?>
             <?php else: ?>     
-              <div id="message" class="info"><p><?php _e('No buddy poke you','bp-poke'); ?></p></div> 
+              <div id="message" class="info"><p><?php _e( 'Nothing to be seen!','bp-poke'); ?></p></div> 
             <?php endif;
          }
      
