@@ -40,8 +40,8 @@ function poke_clear_notifications(){
     if( !bp_poke_is_poke_action() )
         return;
     
-    bp_core_delete_notifications_by_type( bp_loggedin_user_id(), 'poke','user_poked' );
-    bp_core_delete_notifications_by_type( bp_loggedin_user_id(), 'poke','user_poked_back' );
+    bp_core_delete_notifications_by_type( bp_loggedin_user_id(), 'poke', 'user_poked' );
+    bp_core_delete_notifications_by_type( bp_loggedin_user_id(), 'poke', 'user_poked_back' );
 }
 
 //handle poke and poke back maction
@@ -62,11 +62,11 @@ function bp_poke_action_poking(){
     if( $user_id == get_current_user_id() )
         return ;//can't poke yourself dude
    
-    if( !wp_verify_nonce($_REQUEST['_wpnonce'], 'poke_action' ) )
+    if( !wp_verify_nonce( $_REQUEST['_wpnonce'], 'poke_action' ) )
             return ;
    
     $return_url = bp_core_get_user_domain( $user_id );  
-    if( $action=='poke'){
+    if( $action=='poke' ){
        if( !bp_poke_can_user_poke( get_current_user_id(), $user_id ) ){
             
             bp_core_add_message( sprintf( __( 'You have already poked %s. Please wait for a poke back.' ), bp_core_get_user_displayname( $user_id ) ), 'error' );
@@ -74,7 +74,7 @@ function bp_poke_action_poking(){
         }
         else{
         //poke if we are here
-           bp_poke_poke($user_id);
+           bp_poke_poke( $user_id );
            bp_core_add_message( sprintf( __( 'You have poked %s.' ), bp_core_get_user_displayname( $user_id ) ) );
            
            bp_core_redirect( $return_url );

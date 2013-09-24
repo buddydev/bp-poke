@@ -12,10 +12,11 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 //define constants
+//bp poke plugin dir url
 define( 'BP_POKE_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 //plugin dir path with trailing slash
-define( 'BP_POKE_DIR_PATH', plugin_dir_path(__FILE__) );
+define( 'BP_POKE_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 
 class BP_Poke_Helper{
@@ -27,7 +28,7 @@ class BP_Poke_Helper{
         add_action( 'bp_loaded',         array( $this, 'load_files' ), 0 );
        // add_action( 'bp_enqueue_scripts', array( $this, 'load_js' ) );
          //load text domain
-        add_action ( 'bp_loaded',         array( $this,'load_textdomain' ), 2 );
+        add_action ( 'bp_loaded',         array( $this, 'load_textdomain' ), 2 );
     }
     
     public static function get_instance(){
@@ -69,7 +70,7 @@ class BP_Poke_Helper{
             );
         
         foreach( $files as $file )
-            require_once BP_POKE_DIR_PATH. $file ;
+            require_once BP_POKE_DIR_PATH . $file ;
     }
     
 
@@ -78,7 +79,7 @@ class BP_Poke_Helper{
 
 BP_Poke_Helper::get_instance();
 
-add_action( 'bp_setup_components', 'bp_poke_setup_comonent',6 );
+add_action( 'bp_setup_components', 'bp_poke_setup_comonent', 6 );
 
 function bp_poke_setup_comonent(){
     global $bp;

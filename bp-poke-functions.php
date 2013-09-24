@@ -53,7 +53,7 @@ function bp_poke_format_notifications( $action , $item_id, $secondary_item_id, $
         $poked_by       = $item_id;
         $title          = __( 'poke', 'bp-poke' );
         
-        $text ="Alpha Beta";
+        $text ='';
         if( $total_items > 1 )
             $text = sprintf ( '%d people poked you',$total_items );
         else
@@ -95,7 +95,7 @@ function bp_poke_poke( $user_id ){
         
         //add data in user_meta table.
 
-        $time = gmdate( 'Y:M:D g:m:i' );
+        $time = gmdate( 'Y:m:d g:i:s' );
        
         //get past poke details for this user
         $pokes = bp_get_user_meta( $user_id, 'pokes', true );
@@ -127,7 +127,7 @@ function bp_poke_poke_back( $user_id ){
         
         //update for the user whom we have poked
 
-        $time = gmdate( 'Y:M:D g:m:i' );
+        $time = gmdate( 'Y:m:d g:i:s' );
        
         //get past poke details for this user
         $pokes = bp_get_user_meta( $user_id, 'pokes', true );
