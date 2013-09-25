@@ -1,4 +1,6 @@
 <?php
+
+if ( !defined( 'ABSPATH' ) ) exit;
 //user/poke/
 function bpdev_poke_me_button(){
 

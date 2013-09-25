@@ -1,5 +1,7 @@
 <?php
 
+if ( !defined( 'ABSPATH' ) ) exit;
+
 function bp_poke_can_user_poke( $from, $to ){
     
     $pokes = bp_get_user_meta( $to, 'pokes', true );
