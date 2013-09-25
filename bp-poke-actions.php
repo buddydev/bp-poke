@@ -13,7 +13,7 @@ function bpdev_poke_me_button(){
     $to_poke_id  =  bp_displayed_user_id();
     
     if( bp_poke_user_did_poke( $to_poke_id ) ){
-        $url   = bp_poke_get_poke_url( $user_id, 'poke_back' );
+        $url   = bp_poke_get_poke_url( $to_poke_id, 'poke_back' );
         $label = __( 'Poke back', 'bp-poke' );
     
     }else{
@@ -71,13 +71,13 @@ function bp_poke_action_poking(){
     if( $action=='poke' ){
        if( !bp_poke_can_user_poke( get_current_user_id(), $user_id ) ){
             
-            bp_core_add_message( sprintf( __( 'You have already poked %s. Please wait for a poke back.' ), bp_core_get_user_displayname( $user_id ) ), 'error' );
+            bp_core_add_message( sprintf( __( 'You have already poked %s. Please wait for a poke back.', 'bp-poke' ), bp_core_get_user_displayname( $user_id ) ), 'error' );
        
         }
         else{
         //poke if we are here
            bp_poke_poke( $user_id );
-           bp_core_add_message( sprintf( __( 'You have poked %s.' ), bp_core_get_user_displayname( $user_id ) ) );
+           bp_core_add_message( sprintf( __( 'You have poked %s.', 'bp-poke' ), bp_core_get_user_displayname( $user_id ) ) );
            
            bp_core_redirect( $return_url );
         
@@ -89,12 +89,12 @@ function bp_poke_action_poking(){
         
        if( !bp_poke_can_user_poke_back(get_current_user_id(), $user_id ) ){
             
-            bp_core_add_message( sprintf( __( 'You have already poked back %s. Please wait for a poke back.' ), bp_core_get_user_displayname( $user_id ) ), 'error' );
+            bp_core_add_message( sprintf( __( 'You have already poked back %s. Please wait for a poke back.','bp-poke' ), bp_core_get_user_displayname( $user_id ) ), 'error' );
        
         }
         else{
         //poke if we are here
-           bp_core_add_message( sprintf( __( 'You have poked back %s.' ), bp_core_get_user_displayname( $user_id ) ) );
+           bp_core_add_message( sprintf( __( 'You have poked back %s.', 'bp-poke' ), bp_core_get_user_displayname( $user_id ) ) );
            bp_poke_poke_back( $user_id );
            bp_core_redirect( $return_url );
         
