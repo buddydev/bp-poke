@@ -97,7 +97,7 @@ function bp_poke_poke( $user_id ){
         
         //add data in user_meta table.
 
-        $time = gmdate( 'Y:m:d g:i:s' );
+        $time = current_time('timestamp', 1);
        
         //get past poke details for this user
         $pokes = bp_get_user_meta( $user_id, 'pokes', true );
@@ -129,7 +129,7 @@ function bp_poke_poke_back( $user_id ){
         
         //update for the user whom we have poked
 
-        $time = gmdate( 'Y:m:d g:i:s' );
+        $time = current_time('timestamp', 1);
        
         //get past poke details for this user
         $pokes = bp_get_user_meta( $user_id, 'pokes', true );

@@ -79,9 +79,10 @@ function bp_poke_action_poking(){
            bp_poke_poke( $user_id );
            bp_core_add_message( sprintf( __( 'You have poked %s.', 'bp-poke' ), bp_core_get_user_displayname( $user_id ) ) );
            
-           bp_core_redirect( $return_url );
+           
         
         }
+        bp_core_redirect( $return_url );
     }   
     elseif( $action=='poke_back' ){
     //if we are here, check for 
@@ -96,10 +97,10 @@ function bp_poke_action_poking(){
         //poke if we are here
            bp_core_add_message( sprintf( __( 'You have poked back %s.', 'bp-poke' ), bp_core_get_user_displayname( $user_id ) ) );
            bp_poke_poke_back( $user_id );
-           bp_core_redirect( $return_url );
+          
         
         }
-        
+         bp_core_redirect( $return_url );
     }
     
     
