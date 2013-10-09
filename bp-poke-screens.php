@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
@@ -19,8 +17,8 @@ class BP_Poke_Screens  {
         
             if( is_user_logged_in() ){
                 
-                $settings_link = bp_loggedin_user_domain() . bp_get_settings_slug() . '/';
-                bp_core_new_subnav_item( array( 'name' => __( 'Poke', 'bp-poke' ), 'slug' => 'pokes', 'parent_url' => $settings_link, 'parent_slug' => $bp->settings->slug, 'screen_function' => array( $this, 'screen_poke_list' ), 'position' => 59, 'user_has_access' => bp_is_my_profile() ) );
+                $settings_link = bp_loggedin_user_domain() . bp_get_activity_slug() . '/';
+                bp_core_new_subnav_item( array( 'name' => __( 'Poke', 'bp-poke' ), 'slug' => 'pokes', 'parent_url' => $settings_link, 'parent_slug' => $bp->activity->slug, 'screen_function' => array( $this, 'screen_poke_list' ), 'position' => 59, 'user_has_access' => bp_is_my_profile() ) );
 
             }
             

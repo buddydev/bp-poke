@@ -48,7 +48,7 @@ class BP_Poke_Component extends BP_Component {
 		$globals = array(
 			'slug'                  => 'poke',
 			'has_directory'         => false,
-                        'notification_callback' => 'bp_poke_format_notifications',
+            'notification_callback' => 'bp_poke_format_notifications',
 			'global_tables'         => false
 		);
 
