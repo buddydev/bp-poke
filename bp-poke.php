@@ -19,6 +19,7 @@ define( 'BP_POKE_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'BP_POKE_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 
+
 class BP_Poke_Helper{
     
     private static $instance;

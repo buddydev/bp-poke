@@ -57,7 +57,7 @@ function bp_poke_action_poking(){
         return ;
    
     $action  = isset( $_REQUEST['poke_action'] ) ? $_REQUEST['poke_action']: '';
-    $user_id = $_REQUEST['user_id'];
+    $user_id = isset( $_REQUEST['user_id'] ) ? (int) $_REQUEST['user_id'] : 0;
     if( !$action || !$user_id ) 
         return ;
    
