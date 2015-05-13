@@ -10,6 +10,7 @@ function bp_poke_can_user_poke( $from, $to ){
         return false;
     return true;
 }
+
 function bp_poke_can_user_poke_back( $from, $to ){
     
     $pokes = bp_get_user_meta( $from, 'pokes', true );

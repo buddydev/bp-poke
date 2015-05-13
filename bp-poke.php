@@ -9,7 +9,7 @@
  * Description: Allow Users to poke each other
  */
 
-if ( !defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 //define constants
 //bp poke plugin dir url
@@ -20,7 +20,7 @@ define( 'BP_POKE_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 
 
-class BP_Poke_Helper{
+class BP_Poke_Helper {
     
     private static $instance;
     
@@ -34,7 +34,7 @@ class BP_Poke_Helper{
     
     public static function get_instance(){
         
-        if( !isset( self::$instance ) )
+        if( ! isset( self::$instance ) )
             self::$instance = new self();
         
         return self::$instance;
@@ -59,11 +59,9 @@ class BP_Poke_Helper{
        
     }
     
-    public function load_files(){
+    public function load_files() {
  
-        
         $files = array(
-            
                 'bp-poke-functions.php',
                 'bp-poke-component.php',
                 'bp-poke-actions.php',        
@@ -73,9 +71,7 @@ class BP_Poke_Helper{
         foreach( $files as $file )
             require_once BP_POKE_DIR_PATH . $file ;
     }
-    
 
-    
 }
 
 BP_Poke_Helper::get_instance();
