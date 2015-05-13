@@ -78,7 +78,7 @@ BP_Poke_Helper::get_instance();
 
 add_action( 'bp_setup_components', 'bp_poke_setup_comonent', 6 );
 
-function bp_poke_setup_comonent(){
+function bp_poke_setup_comonent() {
     
 	$bp = buddypress();
         
