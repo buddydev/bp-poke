@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: (BuddyDev)BP Poke
+ * Plugin Name: (BuddyDev) BP Poke
  * Plugin URI: http://buddydev.com/plugins/bp-poke/
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Anu Sharma
  * Author URI: http://buddydev.com/members/anusharma/
  * Description: Allow Users to poke each other
@@ -32,7 +32,7 @@ class BP_Poke_Helper {
         add_action ( 'bp_loaded',         array( $this, 'load_textdomain' ), 2 );
     }
     
-    public static function get_instance(){
+    public static function get_instance() {
         
         if( ! isset( self::$instance ) )
             self::$instance = new self();
@@ -48,13 +48,13 @@ class BP_Poke_Helper {
          $locale = apply_filters( 'bp-poke_get_locale', get_locale() );
         
         // if load .mo file
-        if ( !empty( $locale ) ) {
+        if ( ! empty( $locale ) ) {
             $mofile_default = sprintf( '%slanguages/%s.mo', plugin_dir_path(__FILE__), $locale );
             $mofile = apply_filters( 'bp-poke_load_textdomain_mofile', $mofile_default );
 
-                if (is_readable( $mofile ) ) 
-                    // make sure file exists, and load it
-                    load_textdomain( 'bp-poke', $mofile );
+			if (is_readable( $mofile ) ) 
+				// make sure file exists, and load it
+				load_textdomain( 'bp-poke', $mofile );
         }
        
     }
@@ -62,11 +62,11 @@ class BP_Poke_Helper {
     public function load_files() {
  
         $files = array(
-                'bp-poke-functions.php',
-                'bp-poke-component.php',
-                'bp-poke-actions.php',        
-                'bp-poke-screens.php'
-            );
+			'bp-poke-functions.php',
+			'bp-poke-component.php',
+			'bp-poke-actions.php',        
+			'bp-poke-screens.php'
+        );
         
         foreach( $files as $file )
             require_once BP_POKE_DIR_PATH . $file ;
@@ -79,7 +79,8 @@ BP_Poke_Helper::get_instance();
 add_action( 'bp_setup_components', 'bp_poke_setup_comonent', 6 );
 
 function bp_poke_setup_comonent(){
-    global $bp;
+    
+	$bp = buddypress();
         
     $bp->poke = new BP_Poke_Component();
     

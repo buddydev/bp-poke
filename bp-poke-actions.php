@@ -1,8 +1,10 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+
 //user/poke/
-function bpdev_poke_me_button(){
+function bpdev_poke_me_button() {
 
     if( ! is_user_logged_in() )
         return ;
