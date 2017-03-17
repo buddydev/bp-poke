@@ -26,7 +26,7 @@ class BP_Poke_Helper {
 
 	private function __construct() {
 
-		add_action( 'bp_include', array( $this, 'load_files' ), 0 );
+		add_action( 'bp_loaded', array( $this, 'load_files' ), 0 );
 		// add_action( 'bp_enqueue_scripts', array( $this, 'load_js' ) );
 		//load text domain
 		add_action( 'bp_init', array( $this, 'load_textdomain' ), 2 );
