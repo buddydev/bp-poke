@@ -1,23 +1,26 @@
 === BuddyPress Poke ===
 Contributors: buddydev,anusharma,sbrajesh
 Tags: buddypress, user, poke
-Requires at least: BuddyPress 2.0
-Tested up to: BuddyPress 2.3.1
-Stable tag: 1.0.6
-License: GPLv2 
+Requires at least: BuddyPress 2.5
+Tested up to: BuddyPress 2.7.2
+Stable tag: 1.0.8
+License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 BuddyPress Poke Plugin allow members to poke users just like facebook.
 
 == Description ==
 
-BuddyPress Poke Plugin allows members to poke other members.
+BuddyPress Poke Plugin allows members to poke other members on a BuddyPress Social network.
 
 = How it works:- =
 
-User visits other users profile and uses poke button to poke them.
+When a user visits other user's profile they can use poke button to poke them.
+If the BuddyPress activity component is disabled, poke funcionality will not be available.
 
-We welcome your suggestions and support request at [BuddyDev](http://buddydev.com/buddypress/get-your-users-poking-with-bp-poke-plugin/)
+We welcome your suggestions and support request at [BuddyDev](https://buddydev.com/buddypress/get-your-users-poking-with-bp-poke-plugin/)
+
+Checkout [BuddyDev.com](https://buddydev.com) for more awesome BuddyPress Themes & plugins.
 == Installation ==
 
 This section describes how to install the plugin and get it working.
@@ -41,6 +44,13 @@ No, It needs you to have BuddyPress installed and activated. Please make sure th
 4. This show poke back screen screenshot-4.png
 
 == Changelog ==
+
+= 1.0.8 =
+* Do not throw fatal errors when notification/activity components are disabled.
+
+= 1.0.6 =
+* Fix issue with legacy notification.
+* Reorganize code
 
 = 1.0.6 =
 * Add theme compatibility.
