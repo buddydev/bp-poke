@@ -47,8 +47,9 @@ No, It needs you to have BuddyPress installed and activated. Please make sure th
 
 = 1.0.8 =
 * Do not throw fatal errors when notification/activity components are disabled.
+* Fix notification issue for users.
 
-= 1.0.6 =
+= 1.0.7 =
 * Fix issue with legacy notification.
 * Reorganize code
 
