@@ -88,13 +88,14 @@ function bp_poke_get_poke_back_url( $user_id ) {
 /**
  * Get poke url.
  *
- * @param int    $user_id numeric user id.
+ * @param int $user_id numeric user id.
  * @param string $action poke or poke_back .
  *
  * @return string
  */
 function bp_poke_get_poke_url( $user_id, $action ) {
 	$url = bp_poke_get_poke_list_url() . '?poke_action=' . $action . '&user_id=' . $user_id . '&_wpnonce=' . wp_create_nonce( 'poke_action' );
+
 	return $url;
 }
 
@@ -102,9 +103,9 @@ function bp_poke_get_poke_url( $user_id, $action ) {
  * Format poke notifications
  *
  * @param string $action action.
- * @param int    $item_id context related item.
- * @param int    $secondary_item_id context related secondary item.
- * @param int    $total_items no. of items in the notification.
+ * @param int $item_id context related item.
+ * @param int $secondary_item_id context related secondary item.
+ * @param int $total_items no. of items in the notification.
  * @param string $format output format.
  *
  * @return array|string
@@ -162,7 +163,7 @@ function bp_poke_poke( $user_id ) {
 	$poked_by  = get_current_user_id();
 	$component = $bp->poke->id;
 	$action    = 'user_poked';
-	$time = current_time( 'timestamp', 1 );
+	$time      = current_time( 'timestamp', 1 );
 
 	// Get past poke details for this user.
 	$pokes = bp_get_user_meta( $user_id, 'pokes', true );
@@ -178,10 +179,10 @@ function bp_poke_poke( $user_id ) {
 	}
 
 	bp_notifications_add_notification( array(
-		'item_id'   => $poked_by,
-		'user_id'   => $user_id,
-		'component' => $component,
-		'action'    => $action,
+		'item_id'          => $poked_by,
+		'user_id'          => $user_id,
+		'component_name'   => $component,
+		'component_action' => $action,
 	) );
 }
 
@@ -192,7 +193,7 @@ function bp_poke_poke( $user_id ) {
  */
 function bp_poke_poke_back( $user_id ) {
 
-	$bp = buddypress();
+	$bp        = buddypress();
 	$poked_by  = get_current_user_id();
 	$component = $bp->poke->id;
 	$action    = 'user_poked_back';
@@ -222,9 +223,9 @@ function bp_poke_poke_back( $user_id ) {
 	}
 
 	bp_notifications_add_notification( array(
-		'item_id'   => $poked_by,
-		'user_id'   => $user_id,
-		'component' => $component,
-		'action'    => $action,
+		'item_id'          => $poked_by,
+		'user_id'          => $user_id,
+		'component_name'   => $component,
+		'component_action' => $action,
 	) );
 }
