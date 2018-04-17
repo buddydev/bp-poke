@@ -2,8 +2,8 @@
 Contributors: buddydev,anusharma,sbrajesh
 Tags: buddypress, user, poke
 Requires at least: BuddyPress 2.5
-Tested up to: BuddyPress 2.7.2
-Stable tag: 1.0.8
+Tested up to: BuddyPress 2.9.4
+Stable tag: 1.0.9
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,8 @@ No, It needs you to have BuddyPress installed and activated. Please make sure th
 4. This show poke back screen screenshot-4.png
 
 == Changelog ==
+= 1.0.9 =
+* Audit strings for localization
 
 = 1.0.8 =
 * Do not throw fatal errors when notification/activity components are disabled.

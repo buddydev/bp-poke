@@ -2,7 +2,7 @@
 /**
  * Plugin Name: (BuddyDev) BuddyPress Poke
  * Plugin URI: https://buddydev.com/plugins/bp-poke/
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: Anu Sharma
  * Author URI: https://buddydev.com/
  * Description: Allow Users to poke each other on a BuddyPress site
