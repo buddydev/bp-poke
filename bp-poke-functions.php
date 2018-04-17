@@ -121,9 +121,9 @@ function bp_poke_format_notifications( $action, $item_id, $secondary_item_id, $t
 		$text = '';
 
 		if ( $total_items > 1 ) {
-			$text = sprintf( '%d people poked you', $total_items );
+			$text = sprintf( __( '%d people poked you.', 'bp-poke' ), $total_items );
 		} else {
-			$text = sprintf( __( '%s poked you' ), bp_core_get_user_displayname( $poked_by ) );
+			$text = sprintf( __( '%s poked you', 'bp-poke' ), bp_core_get_user_displayname( $poked_by ) );
 		}
 
 		if ( 'string' === $format ) {
