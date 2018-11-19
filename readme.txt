@@ -1,9 +1,9 @@
 === BuddyPress Poke ===
 Contributors: buddydev,anusharma,sbrajesh
 Tags: buddypress, user, poke
-Requires at least: BuddyPress 2.5
-Tested up to: BuddyPress 2.9.4
-Stable tag: 1.0.9
+Requires at least: 4.5
+Tested up to: 4.9.5
+Stable tag: 1.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

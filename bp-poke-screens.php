@@ -25,6 +25,29 @@ class BP_Poke_Screens {
 		add_action( 'bp_setup_theme_compat', array( $this, 'is_poke' ), 5 );
 		add_filter( 'bp_get_template_part', array( $this, 'filter_template' ), 10, 3 );
 
+		add_action( 'wp_ajax_activity_filter', array( $this, 'filter_nouveau_activity' ), 9 );
+	}
+
+	/**
+	 * Filter nouveau poke activities
+	 */
+	public function filter_nouveau_activity() {
+
+		if ( ! function_exists( 'bp_nouveau' ) || ! bp_is_my_profile() || ! bp_is_current_action( 'pokes' ) ) {
+			return;
+		}
+
+		ob_start();
+
+		?>
+            <div id="activity-stream" class="activity single-user" data-bp-list="activity">
+                <?php $this->poke_list_content(); ?>
+            </div><!-- .activity -->
+        <?php
+
+		$result['contents'] = ob_get_clean();
+
+		wp_send_json_success( $result );
 	}
 
 	/**
@@ -105,7 +128,7 @@ class BP_Poke_Screens {
 	 * Poke screen content title
 	 */
 	public function poke_page_title() {
-		echo  __( 'Pokes', 'bp-poke' ) ;
+		echo __( 'Pokes', 'bp-poke' );
 	}
 
 	/**
@@ -117,8 +140,13 @@ class BP_Poke_Screens {
 		$pokes    = bp_get_user_meta( $poked_id, 'pokes', true );
 		$url      = bp_core_get_user_domain( $poked_id );
 
+		$class = '';
+		if ( function_exists( 'bp_nouveau' ) ) {
+			$class = bp_nouveau_get_loop_classes();
+		}
+
 		if ( $pokes ) :
-			echo '<ul class="poke-list">';
+			echo '<ul class="poke-list ' . $class . '">';
 			foreach ( $pokes as $poke ) :
 				?>
                 <li class="poke-item"> <?php printf( __( '<strong>%s</strong> poked you.', 'bp-poke' ), bp_core_get_userlink( $poke['poked_by'] ) ); ?>
