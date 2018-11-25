@@ -40,6 +40,7 @@ function bpdev_poke_me_button() {
 	<?php
 }
 add_action( 'bp_member_header_actions', 'bpdev_poke_me_button' );
+add_action( 'yz_social_buttons', 'bpdev_poke_me_button' );
 
 /**
  * Delete notifications

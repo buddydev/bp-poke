@@ -2,7 +2,7 @@
 Contributors: buddydev,anusharma,sbrajesh
 Tags: buddypress, user, poke
 Requires at least: 4.5
-Tested up to: 4.9.5
+Tested up to: 4.9.8
 Stable tag: 1.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,6 +44,9 @@ No, It needs you to have BuddyPress installed and activated. Please make sure th
 4. This show poke back screen screenshot-4.png
 
 == Changelog ==
+= 1.1.0 =
+* Add BP Nouveau template Compatibility.
+
 = 1.0.9 =
 * Audit strings for localization
 
