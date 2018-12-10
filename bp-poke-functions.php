@@ -167,6 +167,7 @@ function bp_poke_poke( $user_id ) {
 
 	// Get past poke details for this user.
 	$pokes = bp_get_user_meta( $user_id, 'pokes', true );
+	$pokes = empty( $pokes ) ? array() : $pokes;
 
 	// Assuming one user can poke only once.
 	$pokes[ $poked_by ] = array( 'poked_by' => $poked_by, 'time' => $time );
@@ -200,6 +201,8 @@ function bp_poke_poke_back( $user_id ) {
 
 	// we need to delete the pokes of the user whom the current user poked back, in current user;s meta.
 	$logged_pokes = bp_get_user_meta( $poked_by, 'pokes', true );
+	$logged_pokes = empty( $logged_pokes ) ? array() : $logged_pokes;
+
 	// unset the poke from the user whom we just poked back
 	// delete the old poke info.
 	unset( $logged_pokes[ $user_id ] );
