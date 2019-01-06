@@ -6,6 +6,8 @@
  * Author: Anu Sharma
  * Author URI: https://buddydev.com/
  * Description: Allow Users to poke each other on a BuddyPress site
+ * Text Domain: bp-poke
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
