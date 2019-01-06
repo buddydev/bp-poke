@@ -44,6 +44,9 @@ No, It needs you to have BuddyPress installed and activated. Please make sure th
 4. This show poke back screen screenshot-4.png
 
 == Changelog ==
+= 1.1.1 =
+* Add text domain in header.
+
 = 1.1.0 =
 * Add BP Nouveau template Compatibility.
 
