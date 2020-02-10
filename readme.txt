@@ -2,7 +2,7 @@
 Contributors: buddydev,anusharma,sbrajesh
 Tags: buddypress, user, poke
 Requires at least: 4.5
-Tested up to: 4.9.8
+Tested up to: 5.3.2
 Stable tag: 1.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,6 +44,9 @@ No, It needs you to have BuddyPress installed and activated. Please make sure th
 4. This show poke back screen screenshot-4.png
 
 == Changelog ==
+= 1.1.2 =
+* Fix array waring/error when the pokes are not set correctly.
+
 = 1.1.1 =
 * Add text domain in header.
 
