@@ -3,7 +3,7 @@ Contributors: buddydev,anusharma,sbrajesh
 Tags: buddypress, user, poke
 Requires at least: 4.5
 Tested up to: 5.3.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
